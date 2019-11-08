@@ -12,8 +12,7 @@ pipelineJob('studentapp-ci') {
         'userRemoteConfigs' {
           'hudson.plugins.git.UserRemoteConfig' {
             'url'('git@github.com:rishidadwal/jenkins.git')
-             'credentialsId'('1990rishi@gmail.com')
-          }
+                       }
         }
 
         'branches' {
