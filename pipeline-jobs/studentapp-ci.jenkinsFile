@@ -16,7 +16,12 @@ pipeline {
       }
     }
 
-
+    stage ('sonarqube'){
+        steps{
+            sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://3.87.221.130:9000   -Dsonar.login=99c7f1cd3c2a6d19cda7a0ba5b88507f7f895c62'
+        }
+    }
+  
 
   }
 }
