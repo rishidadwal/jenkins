@@ -1,1 +1,49 @@
 https://jenkinsci.github.io/job-dsl-plugin/
+
+## Documentation : https://jenkinsci.github.io/job-dsl-plugin/
+
+## FREE STYLE JOB
+
+freeStyleJob('JOB_NAME') {
+  scm {
+    git {
+      branches('*/master')
+      remote {
+        url('ANY GIT REPO')
+        credentials('Git-Lab')
+      }
+    }
+  }
+  steps {
+    shell('ls')
+  }
+}
+
+
+
+
+### PIPELINE JOBS
+
+pipelineJob('pipeline-template_converted') {
+  configure { flowdefinition ->
+    flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps') {
+      'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git') {
+        'configVersion'(2)
+        'userRemoteConfigs' {
+          'hudson.plugins.git.UserRemoteConfig' {
+            'url'('https://gitlab.com/batch37/jenkins.git')
+            'credentialsId'('Git-Lab')
+          }
+        }
+
+        'branches' {
+          'hudson.plugins.git.BranchSpec' {
+            'name'('*/master')
+          }
+        }
+      }
+      'scriptPath'('dir/dir/sample.Jenkinsfile')
+      'lightweight'(true)
+    }
+  }
+}
