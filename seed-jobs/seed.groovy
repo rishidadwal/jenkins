@@ -22,7 +22,7 @@ pipelineJob('studentapp-ci') {
           }
         }
       }
-      'scriptPath'('pipeline-jobs/studentapp-ci.Jenkinsfile')
+      'scriptPath'('pipeline-jobs/studentapp-ci.JenkinsFile')
       'lightweight'(true)
     }
   }
