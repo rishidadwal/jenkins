@@ -9,5 +9,14 @@ pipeline {
         sh 'echo hello world'
       }
     }
+
+    stage('Code-Quality') {
+      steps {
+        sh 'mvn clean compile'
+      }
+    }
+
+
+
   }
 }
