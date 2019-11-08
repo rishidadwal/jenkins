@@ -6,7 +6,7 @@ pipeline {
     stage('Git-Clone') {
       steps {
         git url: 'git@github.com:rishidadwal/jenkins.git'
-        
+        sh " echo hello world"
       }
     }
   }
