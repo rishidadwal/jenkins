@@ -1,9 +1,12 @@
-pipeline{
-    agent any
+pipeline {
+  agent any 
+
     stages {
-        stage ("one")
-        steps {
-            sh "hello  world"
-        }
+
+    stage('Git-Clone') {
+      steps {
+        git credentialsId: '1990rishi@gmail.com', url: 'git@github.com:rishidadwal/jenkins.git'
+      }
     }
+  }
 }
