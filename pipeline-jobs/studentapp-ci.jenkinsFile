@@ -1,6 +1,9 @@
 pipeline {
   agent any 
-
+ environment {
+        SONAR_SERVER = '3.87.221.130'
+       SONAR_TOKEN  = credentials('SONAR_TOKEN')
+    }
     stages {
 
     stage('Git-Clone') {
@@ -18,7 +21,7 @@ pipeline {
 
     stage ('sonarqube'){
         steps{
-            sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://3.87.221.130:9000   -Dsonar.login=99c7f1cd3c2a6d19cda7a0ba5b88507f7f895c62'
+            sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://${SONAR_SERVER}:9000   -Dsonar.login=${SONAR_TOKEN}'
         }
     }
   
