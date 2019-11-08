@@ -5,7 +5,7 @@ pipeline {
 
     stage('Git-Clone') {
       steps {
-        git credentialsId: '1990rishi@gmail.com', url: 'git@github.com:rishidadwal/jenkins.git'
+        git url: 'git@github.com:rishidadwal/jenkins.git'
       }
     }
   }
