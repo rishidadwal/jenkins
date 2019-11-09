@@ -25,7 +25,7 @@ pipeline {
         steps{
              withSonarQubeEnv('SonarQube') {
            
-            sh 'mvn sonar:sonar  -Dsonar.projectKey=upi  -Dsonar.host.url=http://184.72.80.2:9000   -Dsonar.login=172c3b0065a4742953f256c3f61240da89b4dce0'
+            sh 'mvn sonar:sonar  -Dsonar.projectKey=upi  -Dsonar.host.url=http://34.205.63.4:9000   -Dsonar.login=172c3b0065a4742953f256c3f61240da89b4dce0'
             //sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://${SONAR_SERVER}:9000   -Dsonar.login=${SONAR_TOKEN}'
           }
         
