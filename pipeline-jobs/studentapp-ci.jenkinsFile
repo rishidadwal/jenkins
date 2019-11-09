@@ -1,7 +1,7 @@
 pipeline {
   agent any 
  environment {
-        SONAR_SERVER = '3.87.221.130'
+        SONAR_SERVER = '3.86.94.106'
        SONAR_TOKEN  = credentials('SONAR_TOKEN')
     }
     stages {
