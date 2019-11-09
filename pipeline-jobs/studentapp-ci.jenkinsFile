@@ -24,7 +24,12 @@ pipeline {
     stage ('sonarqube'){
         steps{
              withSonarQubeEnv('SonarQube') {
-            sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://${SONAR_SERVER}:9000   -Dsonar.login=${SONAR_TOKEN}'
+           
+            sh 'mvn sonar:sonar \
+             -Dsonar.projectKey=student \
+             -Dsonar.host.url=http://184.72.80.2:9000 \
+             -Dsonar.login=4d3e75710e3338a471babaac8a5c5d512d9c586b'
+            //sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://${SONAR_SERVER}:9000   -Dsonar.login=${SONAR_TOKEN}'
           }
         
        }
