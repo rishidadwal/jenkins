@@ -23,8 +23,11 @@ pipeline {
 
     stage ('sonarqube'){
         steps{
+             withSonarQubeEnv('My SonarQube Server') {
             sh 'mvn sonar:sonar   -Dsonar.projectKey=studentapp-ci  -Dsonar.host.url=http://${SONAR_SERVER}:9000   -Dsonar.login=${SONAR_TOKEN}'
         }
+        
+       }
     }
   
 
