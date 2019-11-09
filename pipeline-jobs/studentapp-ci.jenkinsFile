@@ -46,5 +46,15 @@ pipeline {
           }
       }
      
+      
+       stage("Push to artifactory"){
+          steps{
+              sh "mvn deploy"
+          }
+      }
+     
+      
+
+
   }
 }
