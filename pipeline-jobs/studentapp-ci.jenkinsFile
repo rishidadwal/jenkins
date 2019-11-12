@@ -51,7 +51,7 @@ pipeline {
       
        stage("Push to artifactory"){
           steps{
-              sh "mvn -s setting.xml -DNEXUS_USR -DNEXUS_PSW"
+              sh "mvn -s setting.xml -DNEXUS_USR=${NEXUS_USR} -DNEXUS_PSW=${NEXUS_PSW}"
           }
       }
 
